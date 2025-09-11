@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio — Clean, Modern & Mind-Blowing</title>
+  <meta name="description" content="Responsive, accessible personal portfolio template: hero, about, projects, skills, contact. Ready to customize." />
+
+  <!-- Google Font (uses network) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0f1724; /* deep navy */
+      --card: rgba(255,255,255,0.04);
+      --glass: rgba(255,255,255,0.06);
+      --accent1: #7c3aed; /* purple */
+      --accent2: #06b6d4; /* cyan */
+      --muted: #99a1b2;
+      --max-width:1100px;
+      --radius:14px;
+      --soft: 0 6px 24px rgba(2,6,23,0.6);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;}
+    body{
+      margin:0;padding:32px;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial; background:radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.08), transparent 8%), radial-gradient(900px 500px at 90% 90%, rgba(6,182,212,0.06), transparent 12%), var(--bg); color:#e6eef8; -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale; display:flex; align-items:flex-start; justify-content:center;
+    }
+
+    .wrap{width:100%;max-width:var(--max-width);}
+
+    /* Header / Hero */
+    header{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-bottom:34px}
+    @media (max-width:900px){header{grid-template-columns:1fr;}}
+
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));border-radius:var(--radius);padding:28px;box-shadow:var(--soft);backdrop-filter: blur(6px);}
+    .kicker{display:inline-block;padding:6px 12px;border-radius:999px;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;font-weight:700;font-size:13px;margin-bottom:12px}
+
+    h1{font-size:34px;margin:0 0 8px 0;letter-spacing:-0.02em}
+    p.lead{margin:0;color:var(--muted);line-height:1.5}
+
+    /* CTA Buttons */
+    .cta{display:flex;gap:10px;margin-top:18px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,0.05);cursor:pointer}
+    .btn-primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;box-shadow:0 8px 30px rgba(124,58,237,0.16);}
+    .btn-ghost{background:transparent;color:var(--muted)}
+
+    /* Small profile card */
+    .profile{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:var(--radius);padding:20px;display:flex;gap:14px;align-items:center;box-shadow:var(--soft)}
+    .avatar{width:88px;height:88px;border-radius:12px;flex:0 0 88px;overflow:hidden;border:1px solid rgba(255,255,255,0.06)}
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    .meta h3{margin:0 0 4px 0}
+    .meta p{margin:0;color:var(--muted);font-size:14px}
+
+    /* Main content grid */
+    main{display:grid;grid-template-columns:1fr 340px;gap:28px}
+    @media (max-width:1000px){main{grid-template-columns:1fr}}
+
+    .section{background:var(--card);border-radius:12px;padding:18px}
+    .section h2{margin:0 0 12px 0}
+    .about .bio{color:var(--muted);line-height:1.6}
+
+    /* Projects grid */
+    .projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    @media (max-width:700px){.projects-grid{grid-template-columns:1fr}}
+    .project{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);transition:transform .28s cubic-bezier(.2,.9,.2,1),box-shadow .28s}
+    .project:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(2,6,23,0.6)}
+    .project img{width:100%;height:140px;object-fit:cover;border-radius:8px;margin-bottom:10px}
+    .tags{display:flex;gap:8px;flex-wrap:wrap}
+    .tag{font-size:12px;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.03);color:var(--muted)}
+
+    /* Sidebar */
+    .sidebar .skills{display:flex;flex-direction:column;gap:10px}
+    .skill{display:flex;justify-content:space-between;align-items:center}
+    .bar{height:10px;background:rgba(255,255,255,0.03);border-radius:999px;overflow:hidden;width:100%;margin-left:12px}
+    .bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent1),var(--accent2));}
+
+    /* Contact */
+    form{display:flex;flex-direction:column;gap:10px}
+    input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:10px;border-radius:8px;color:inherit}
+    textarea{min-height:120px}
+    .muted-note{color:var(--muted);font-size:13px}
+
+    footer{margin-top:20px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* subtle animated gradient line */
+    .accent-line{height:4px;border-radius:999px;background:linear-gradient(90deg,var(--accent1),var(--accent2));margin:18px 0}
+
+    /* small utilities */
+    .grid-two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media (max-width:700px){.grid-two{grid-template-columns:1fr}}
+
+    a{text-decoration:none;color:inherit}
+
+    /* focus-visible for keyboard users */
+    :focus{outline:3px solid rgba(124,58,237,0.16);outline-offset:2px}
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="hero-card">
+        <span class="kicker">Designer • Developer • Creator</span>
+        <h1>Hi, I'm Daffa — I build delightful web experiences</h1>
+        <p class="lead">I craft clean, accessible, and fast websites. I focus on clarity, performance, and joy — for users and creators alike.</p>
+
+        <div class="cta">
+          <a class="btn btn-primary" href="#projects">See Projects</a>
+          <a class="btn btn-ghost" href="#contact">Contact Me</a>
+        </div>
+
+        <div class="accent-line" aria-hidden="true"></div>
+
+        <p class="muted-note">Built with semantic HTML, modern CSS (no frameworks required), and a tiny sprinkle of JS for interactivity.</p>
+      </div>
+
+      <aside class="profile" aria-label="Profile card">
+        <div class="avatar" role="img" aria-label="Foto profil">
+          <img src="data:image/jpeg;base64,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" alt="Foto profil" />
+        </div>
+        <div class="meta">
+          <h3>Daffa</h3>
+          <p>Front-end Developer & UI Designer</p>
+          <p class="muted-note">Jakarta, Indonesia • Available for freelance</p>
+        </div>
+      </aside>
+    </header>
+
+    <main>
+      <section class="section about" aria-labelledby="about-heading">
+        <h2 id="about-heading">About Me</h2>
+        <p class="bio">I translate ideas into beautiful, usable interfaces. My workflow balances simplicity with detail: semantic markup, purposeful interactions, and thoughtful performance. I love learning new tools and teaching what I learn.</p>
+
+        <div style="height:18px"></div>
+
+        <div class="grid-two">
+          <div>
+            <h3>Quick Facts</h3>
+            <p class="muted-note">5+ years building websites • 30+ projects shipped • JS, HTML, CSS, React</p>
+          </div>
+          <div>
+            <h3>Get my Resume</h3>
+            <p><a class="btn btn-ghost" href="#" onclick="downloadResume(event)">Download PDF</a></p>
+          </div>
+        </div>
+      </section>
+
+      <aside class="section sidebar" aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Skills</h2>
+        <div class="skills">
+          <div class="skill"><strong>HTML</strong><div class="bar" title="HTML - 95%"><i style="width:95%"></i></div></div>
+          <div class="skill"><strong>CSS</strong><div class="bar" title="CSS - 90%"><i style="width:90%"></i></div></div>
+          <div class="skill"><strong>JavaScript</strong><div class="bar" title="JavaScript - 80%"><i style="width:80%"></i></div></div>
+          <div class="skill"><strong>UI/UX</strong><div class="bar" title="UI/UX - 85%"><i style="width:85%"></i></div></div>
+        </div>
+
+        <div style="height:18px"></div>
+
+        <h3>Contact</h3>
+        <p class="muted-note">Email: <a href="mailto:daffa@example.com">daffa@example.com</a></p>
+        <p class="muted-note">Telegram: <a href="#">@yourhandle</a></p>
+      </aside>
+
+      <section class="section" id="projects" aria-labelledby="projects-heading">
+        <h2 id="projects-heading">Selected Projects</h2>
+
+        <div style="margin-bottom:12px">
+          <label for="filter" class="muted-note">Filter:</label>
+          <select id="filter" onchange="filterProjects(event)">
+            <option value="all">All</option>
+            <option value="web">Web</option>
+            <option value="design">Design</option>
+            <option value="tooling">Tooling</option>
+          </select>
+        </div>
+
+        <div class="projects-grid" id="projects-grid">
+
+          <article class="project" data-type="web">
+            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop" alt="Project 1 screenshot" />
+            <h3>Portfolio Website</h3>
+            <p class="muted-note">A minimal, high-performance portfolio focused on readability and fast load times.</p>
+            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Performance</span></div>
+          </article>
+
+          <article class="project" data-type="design">
+            <img src="https://images.unsplash.com/photo-1485217988980-11786ced9454?q=80&w=1200&auto=format&fit=crop" alt="Project 2 screenshot" />
+            <h3>Branding & UI Kit</h3>
+            <p class="muted-note">Brand identity & component library for a fintech startup.</p>
+            <div class="tags"><span class="tag">Figma</span><span class="tag">Design System</span></div>
+          </article>
+
+          <article class="project" data-type="tooling">
+            <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981d?q=80&w=1200&auto=format&fit=crop" alt="Project 3 screenshot" />
+            <h3>Build Tooling</h3>
+            <p class="muted-note">Automated build scripts and CI templates to speed up developer workflows.</p>
+            <div class="tags"><span class="tag">Node</span><span class="tag">CI</span></div>
+          </article>
+
+          <article class="project" data-type="web">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="Project 4 screenshot" />
+            <h3>Interactive Learning App</h3>
+            <p class="muted-note">An app to teach coding with small interactive exercises.</p>
+            <div class="tags"><span class="tag">React</span><span class="tag">Education</span></div>
+          </article>
+
+        </div>
+      </section>
+
+      <section class="section" id="contact" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Contact Me</h2>
+        <p class="muted-note">Send a quick message and I'll reply as soon as I can.</p>
+        <form onsubmit="sendMessage(event)">
+          <input type="text" id="name" placeholder="Your name" required />
+          <input type="email" id="email" placeholder="Your email" required />
+          <textarea id="message" placeholder="What would you like to talk about?" required></textarea>
+          <button class="btn btn-primary" type="submit">Send Message</button>
+        </form>
+      </section>
+
+    </main>
+
+    <footer>
+      <p>© <span id="year"></span> Daffa • Built with care — made for people.</p>
+    </footer>
+  </div>
+
+  <script>
+    // small helpers: year, resume download (placeholder), contact handler, project filter
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function downloadResume(e){
+      e.preventDefault();
+      // Replace with real URL or generate on server
+      const url = '#';
+      alert('Resume download placeholder. Replace `#` with a PDF link in the code.');
+      // window.location.href = url;
+    }
+
+    function sendMessage(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if(!name || !email || !message) return alert('Please fill all fields.');
+      // Simple client-side demonstration: open mailto (good as fallback)
+      const subject = encodeURIComponent('Portfolio Inquiry from ' + name);
+      const body = encodeURIComponent(message + '\n\nContact: ' + email);
+      window.location.href = `mailto:daffa@example.com?subject=${subject}&body=${body}`;
+    }
+
+    function filterProjects(e){
+      const v = e.target.value;
+      const items = document.querySelectorAll('#projects-grid .project');
+      items.forEach(it => {
+        const type = it.getAttribute('data-type');
+        it.style.display = (v === 'all' || type === v) ? 'block' : 'none';
+      });
+    }
+
+    // small progressive enhancement: keyboard focus for project links
+    document.querySelectorAll('.project').forEach(p => {
+      p.tabIndex = 0;
+      p.addEventListener('keypress', (ev) => { if(ev.key === 'Enter') p.click(); });
+    });
+  </script>
+</body>
+</html>
