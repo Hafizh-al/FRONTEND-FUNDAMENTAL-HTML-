@@ -1,12 +1,80 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Z</title>
+        <title>Form</title>
     </head>
     <body>
-        <h1></h1>
+        <h1>Perpustakaan Banyumas</h1>
+        <hr>
+        <h4>Halaman Web:</h4>
+        <ul>
+            <li><a href="index.html">beranda</a></li>
+            <li><a href="Buku.html">buku</a></li>
+            <li><a href="kontak.html">kontak</a></li>
+        </ul>
+        <hr>
+        <h1>Beranda</h1>
+        <h2>Selamat datang di Perpustakaan Banyumas</h2>
+        <p>Perpustakaan ini diperuntukkan untuk siapa saja yang ingin membaca buku buku pupoler seputar sains</p>
 
-        <p></p>
+        <h1>Daftar Buku</h1>
+        <table border="1px">
+        <tr>
+            <th>No</th>
+            <th>Judul</th>
+            <th>Penulis</th>
+            <th>Status</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>bumi Manusia</td>
+            <td>ddsd</td>
+            <td>Tersdia</td>
+        </tr>
+        </table>
+
+
+        <form>
+            <label for="data_nama">Nama:</label>
+            <input type="text" id="data_nama" form="data_nama"><br>
+            <label for="data_tanya">Pertanyaan:</label><br>
+            <textarea name="data_tanya" id="data_tanya" cols="30" rows="10"></textarea>
+            <br>
+            <input type="button" value="Submit">
+        </form>
+    </body>
+
+    <body>
+        <form>
+            Nama depan : <input type="text"><br>
+            Nama belakang : <input type="text"><br>
+            Password : <input type="Password"><br>
+            <h4>WNI:Radio button</h4>
+            <input type="radio" name="WNI" value="ya"><label for="ya">ya</label><br>
+            <input type="radio" name="WNI" value="tidak"><label for="tidak">tidak</label><br>
+            <h4>Musik favorit: (Checkbox)</h4>
+            <input type="Checkbox" name="Murottal" value="Murottal"><label for="Murottal">murottal</label><br>
+            <input type="Checkbox" name="Murottal" value="Murottal"><label for="Murottal">murottal</label><br>
+
+            <h4>Dropdownlist</h4>
+            <select name="pekerjaan">
+                <option value="mahasiswa">Mahasiswa</option>
+                <option value="wirausaha">Wirausaha</option>
+            </select>
+            <br>
+
+            <h4>Upload file</h4>
+            <input type="file" name="foto" value="Upload_foto"><br>
+            <input type="button" name="Submit" value="Submit">
+        </form>
+    </body>
+
+    <body>
+        <h1>Menampilkan Video</h1>
+        
+        <video src="" poster="" width="100%" controls preload="metadata">
+            <p>Video</p>
+        </video>
     </body>
 </html>
 
@@ -52,3 +120,62 @@ Definition List
 <h2 id="chapter-4">Chapter-4</h2>
 
 <a href="cerita.html#chapter-4">chapter-4</a>
+
+
+<!-- tr, baris -->
+<!-- td, data -->
+<!-- th, header -->
+
+    <body>
+        <h1>membuat tabel</h1>
+        <table border="1">
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+        </table>
+
+        <h4>dengan header</h4>
+        <table border="1">
+            <tr>
+                <th>Senin</th>
+                <td>10.00</td>
+                <td>12.00</td>
+                <td>14.00</td>
+            </tr>
+            <tr>
+                <th>Selasa</th>
+                <td>10.00</td>
+                <td>12.00</td>
+                <td>14.00</td>
+            </tr>
+        </table>
+        <br>
+        <table border="1">
+            <th>Senin</th>
+            <th>Selasa</th>
+            <tr>
+                <td>10.00</td>
+                <td>11.00</td>
+            </tr>
+            <tr>
+                <td>11.00</td>
+                <td>11.00</td>
+                <!-- <td colspan="2">Makan Siang</td>   /*menambah kolom*/ -->
+                <!-- <td rowspan="2">Makan Siang</td>   /*menambah baris*/ 
+            </tr>
+        </table>
+    </body>
+</html>
+
+
+
+
+
