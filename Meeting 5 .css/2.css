@@ -1,6 +1,6 @@
 body {
     background-color: #fffaf0;
-    font-family: Arial, sans-serif;
+    font-family: Verdana;
 }
 
 header {
@@ -28,10 +28,11 @@ h1 {
 }
 
 h2 {
-    color: #8b0000;
+    color: #191970;
 }
 
 p {
     color: #333333;
     line-height: 1.6;
+    font-family: Arial;
 }
