@@ -1,0 +1,105 @@
+body {
+    background-color: white;
+    font-family: Verdana;
+    margin: 20px;
+    padding: 20px;  
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    color: #191970;
+    font-size: 32px;
+    margin-bottom: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+p {
+    color: #2f4f4f;
+    font-family: Arial;
+    margin-bottom: 15px;
+    font-size: 16px;
+    margin: 0 auto 15px auto;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+    color: #191970;
+    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.kartu-profil {
+/* Lebar kartu */
+    width: 300px;
+/* Beri warna latar dan bayangan agar terlihat seperti kartu */
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Properti untuk bayangan
+*/
+/* Atur Jarak & Bingkai */
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 10px; /* Sudut melengkung */
+    margin: 50px; /* Beri jarak dari elemen lain di sekitarnya */
+/* (Opsional) Pusatkan teks di dalamnya */
+    text-align: center;
+    width: 89%;
+}
+
+.p {
+    font-size: 18px; /* Ukuran font lebih besar untuk teks di dalam kartu */
+    color: #333; /* Warna teks */
+    line-height: 1.6; /* Jarak antar baris */
+    margin: 10px 0; /* Jarak atas dan bawah */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 15px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0,
+    0, 0.1);
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Agar responsif pada layar kecil */
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+
+.brand {
+    font-size: 1.5em; /*em adalah satuan relatif yang mengacu pada ukuran font elemen induk*/
+    font-weight: bold;
+}
+
