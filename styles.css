@@ -7,10 +7,6 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body {
-    background-color: #1f242d;
-}
-
 a {
     color: #fff;
     text-decoration: none;
@@ -26,6 +22,17 @@ a {
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    animation: show-content 1.5s linear forwards;
+    animation-delay: 1.2s;
+}
+
+@keyframes show-content {
+    100% {
+        visibility: visible;
+        opacity: 1;
+    }
 }
 
 .navbar .logo {
@@ -56,9 +63,14 @@ a {
 .home {
     display: flex;
     align-items: center;
+    gap: 50px;
     height: 100vh;
-    padding: 60 9% 0;
+    padding: 60px 9% 0;
     color: #fff;
+    visibility: hidden;
+    opacity: 0;
+    animation: show-content 1.5s linear forwards;
+    animation-delay: 1.5s;
 }
 
 .home-info h1 {
@@ -66,12 +78,49 @@ a {
 }
 
 .home-info h2 {
+    display: inline-block;
     font-size: 32px;
     margin-top: -10px;
 }
 
+.home-info h2 span {
+    color: transparent;
+    display: inline-block;
+    -webkit-text-stroke: 7px #03a9f4;
+    animation: display-text 15s linear infinite;
+    animation-delay: calc(-4s * var(--i));
+}
+
+@keyframes display-text {
+    25%,
+    100% {
+        display: none;
+    }
+}
+
+.home-info h2 span::before {
+    content: attr(data-text);
+    position: absolute;
+    width: 0;
+    border-right:  2px solid #03a9f4;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: fill-text 5s linear infinite;
+}
+
+@keyframes fill-text {
+    10%,
+    100% {
+        width: 0;
+    }
+
+    70%,
+    90% {
+        width: 100%;
+    }
+}
 .home-info p {
-    font-size: 17px;
+    font-size: 15px;
     margin: 10px 0 25px;
 }
 
@@ -85,10 +134,10 @@ a {
     padding: 10px 30px;
     background: #03a9f4;
     border: 2px solid #03a9f4;
-    border-radius: 33px;
+    border-radius: 39px;
     box-shadow: 0 0 10px #03a9f4;
-    font-size: 17px;
-    color: #1f242d
+    font-size: 15px;
+    color: #1f242d;
     font-weight: 601;
     transition: .5s;    
 }
@@ -121,23 +170,79 @@ a {
 }
 
 .home-img .img-box {
+    position: relative;
     width: 33vw;
     height: 33vw;
-    background: red;
     border-radius: 50%;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.home-img .img-box::before,
+.home-img .img-box::after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: conic-gradient(transparent, transparent, transparent, #03a9f4);
+    transform: rotate(0deg);
+    animation: rotate-border 10s linear infinite;
+}
+
+.home-img .img-box::after {
+    animation-delay: -5s;
+}
+
+@keyframes rotate-border {
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .home-img .img-box .img-item {
     position: relative;
     width: 100%;
     height: 100%;
-    background: slateblue;
+    background: #1f242d;
     border-radius: 50%;
+    border: .1px solid #1f242d;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    overflow: hidden;
 }
 
 .home-img .img-box .img-item img {
     position: absolute;
+    top: 30px;
     display: block;
-    width: 9%;
+    width: 85%;
     object-fit: cover;
+    mix-blend-mode: lighten;
+}
+
+.bars-animation {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: -1;
+}
+
+.bars-animation .bar {
+    width: 100%;
+    height: 100%;
+    background: #1f242d;
+    transform: translateY(-100%);
+    animation: show-bars .5s ease-in-out forwards;
+    animation-delay: calc(.1s * var(--i));
+}
+
+@keyframes show-bars {
+    100% {
+        transform: translateY(0%);
+    }
 }

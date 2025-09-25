@@ -7,36 +7,81 @@ body {
     text-align: center;
 }
 
-h1 {
-    color: #191970;
-    font-size: 32px;
-    margin-bottom: 10px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+header {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #000000;
+    padding: 20px 25px 30px 25px;
+    border-radius: 11px;
+    z-index: 1000;
+    box-shadow: 0 7px 15px #000000;
+    backdrop-filter: blur(11px);
+    -webkit-backdrop-filter: blur(11px);
+    margin-bottom: 30px;
+    position: sticky;
+    top: 15px;
 }
 
-img {
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 175px; /* Sesuaikan dengan tinggi header */
+}
+
+header h1 {
+    margin: 5px 0 13px 0;
+    font-size: 36px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+nav ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s;
+    letter-spacing: 1px;
+}
+header p {
+    margin: 0;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+.kartu-profil img {
     max-width: 100%;
     height: auto;
     display: block;
     margin: 20px auto;
     border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-p {
+p  {
     color: #2f4f4f;
     font-family: Arial;
     margin-bottom: 15px;
     font-size: 16px;
     margin: 0 auto 15px auto;
     padding: 10px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+    
 }
 
 h2 {
@@ -51,21 +96,98 @@ h2 {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+.project-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 39px;
+    padding: 20px;
+}
+
+.my-certificate {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 39px;
+    padding: 20px;
+}
+
+.card {
+  background: linear-gradient(to right, #232526, #414345);
+  border-radius: 11px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 19px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+/* Pertemuan 9 */
+/* Tablet Styles: Terapkan 2 kolom jika lebar layar minimal 600px */
+@media (min-width: 600px) {
+.project-gallery {
+grid-template-columns: repeat(2, 1fr); /* Ubah menjadi 2 kolom */
+}
+}
+/* Desktop Styles: Terapkan 3 kolom jika lebar layar minimal 900px */
+@media (min-width: 900px) {
+.project-gallery {
+grid-template-columns: repeat(3, 1fr); /* Ubah menjadi 3 kolom */
+}
+}
+
+/* Tablet Styles: Terapkan 2 kolom jika lebar layar minimal 600px */
+@media (min-width: 600px) {
+.my-certificate {
+grid-template-columns: repeat(2, 1fr); /* Ubah menjadi 2 kolom */
+}
+}
+/* Desktop Styles: Terapkan 3 kolom jika lebar layar minimal 900px */
+@media (min-width: 900px) {
+.my-certificate {
+grid-template-columns: repeat(3, 1fr); /* Ubah menjadi 3 kolom */
+}
+}
+
+.card:hover {
+  transform: translateY(-5px); /* animasi hover */
+}
+
+.card img {
+  width: 100%;
+  height: 255px;
+  object-fit: cover; /* gambar ngepas kotak */
+  border-radius: 11px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+  color: white;
+}
+
+.card p {
+  font-size: 14px;
+  color: white;
+}
+
 .kartu-profil {
 /* Lebar kartu */
-    width: 300px;
+    /* width: 300px; */
 /* Beri warna latar dan bayangan agar terlihat seperti kartu */
     background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Properti untuk bayangan
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Properti untuk bayangan
 */
 /* Atur Jarak & Bingkai */
     padding: 20px;
-    border: 1px solid #eee;
-    border-radius: 10px; /* Sudut melengkung */
+    border: 11px solid rgba(0, 0, 0, 0.7);
+    border-radius: 11px; /* Sudut melengkung */
     margin: 50px; /* Beri jarak dari elemen lain di sekitarnya */
 /* (Opsional) Pusatkan teks di dalamnya */
     text-align: center;
-    width: 89%;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    margin-left: 300px;
+    margin-right: 300px;
+    /* flex-wrap: wrap; */
 }
 
 .p {
@@ -75,17 +197,29 @@ h2 {
     margin: 10px 0; /* Jarak atas dan bawah */
 }
 
+/* Pertemuan 7 */
+
 .navbar {
     display: flex;
+    flex-direction: column; /* Menumpuk item secara vertikal */
     justify-content: space-between;
-    align-items: center;
+    align-items: center; /* Memusatkan item */
+    gap: 15px;
     background-color: #333;
     padding: 15px 30px;
-    border-radius: 8px;
+    border-radius: 11px;
     box-shadow: 0 2px 4px rgba(0, 0,
     0, 0.1);
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     flex-wrap: wrap; /* Agar responsif pada layar kecil */
+}
+/* Pertemuan 9 */
+/* Terapkan jika lebar layar minimal 768px */
+@media (min-width: 768px) {
+.navbar {
+flex-direction: row; /* Kembali ke baris horizontal */
+justify-content: space-between; /* Mendorong item ke ujung */
+}
 }
 
 .nav-links {
@@ -103,3 +237,130 @@ h2 {
     font-weight: bold;
 }
 
+div.contact-container {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit';
+    background: linear-gradient(white, #cacaca, #cacaca, white);
+    border-radius: 11px;
+}
+
+.contact-container {
+    height: 89vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.contact-left {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 19px;
+}
+
+.contact-left-title {
+    font-size: 39px;
+    font-weight: 599;
+    color: #a363aa;
+    margin-bottom: 5px;
+}
+
+.contact-left-title hr {
+    width: 119px;
+    border: none;
+    height: 5px;
+    background-color: #a363aa;
+    border-radius: 9px;
+    margin-bottom: 7px;
+    margin-top: -7px;
+    margin-right: 21px;
+}
+.contact-input {
+    width: 400px;
+    height: 50px;
+    border: #00000029 1px solid;
+    outline: none;
+    padding-left: 25px;
+    font-weight: 501;
+    color: #666;
+    border-radius: 11px;
+}
+
+.contact-left textarea {
+    height: 141px;
+    padding-top: 15px;
+    border-radius: 11px;
+    border: #00000029 1px solid;
+}
+
+.contact-input:focus {
+    border: 2px solid #ff994f;
+}
+
+.contact-inputs::placeholder {
+    color: darkolivegreen;
+}
+
+.contact-left button {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    font-size: 16px;
+    color: #fff;
+    gap: 10px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(270deg, #ff994f, #fa6d86);
+    cursor: pointer;
+}
+
+.contact-right img {
+    width: 500px;
+    height: 445px;
+    border-radius: 11px;
+    margin-top: 1px;
+    mix-blend-mode: multiply; 
+}
+
+@media (max-width: 800px) {
+    .contact-input{
+        width: 80vw;
+    }
+    .contact-right {
+        display: none;
+    }
+}
+
+.social-links img {
+    width: 55px;
+    height: 55px;
+    transition: transform 0.3s;
+    mix-blend-mode: multiply;
+    align-items: center;
+    justify-content: center;
+    border-radius: 11px;
+    margin: 0 10px;
+}
+
+
+.card3 {
+    width: 250px;
+    height: 150px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: auto;
+    padding: 40px;
+    border-radius: 8px;
+} 
