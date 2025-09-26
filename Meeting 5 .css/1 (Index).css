@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-color: white;
     font-family: Verdana;
@@ -79,7 +85,7 @@ p  {
     font-family: Arial;
     margin-bottom: 15px;
     font-size: 16px;
-    margin: 0 auto 15px auto;
+    margin: 0 auto 0px auto;
     padding: 10px;
     
 }
@@ -104,6 +110,13 @@ h2 {
 }
 
 .my-certificate {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 39px;
+    padding: 20px;
+}
+
+.my-hobby {
     display: grid;
     grid-template-columns: 1fr;
     gap: 39px;
@@ -145,6 +158,19 @@ grid-template-columns: repeat(3, 1fr); /* Ubah menjadi 3 kolom */
 }
 }
 
+/* Tablet Styles: Terapkan 2 kolom jika lebar layar minimal 600px */
+@media (min-width: 600px) {
+.my-hobby {
+grid-template-columns: repeat(2, 1fr); /* Ubah menjadi 2 kolom */
+}
+}
+/* Desktop Styles: Terapkan 3 kolom jika lebar layar minimal 900px */
+@media (min-width: 900px) {
+.my-hobby {
+grid-template-columns: repeat(3, 1fr); /* Ubah menjadi 3 kolom */
+}
+}
+
 .card:hover {
   transform: translateY(-5px); /* animasi hover */
 }
@@ -177,7 +203,7 @@ grid-template-columns: repeat(3, 1fr); /* Ubah menjadi 3 kolom */
 */
 /* Atur Jarak & Bingkai */
     padding: 20px;
-    border: 11px solid rgba(0, 0, 0, 0.7);
+    border: 19px solid rgba(0, 0, 0, 0.7);
     border-radius: 11px; /* Sudut melengkung */
     margin: 50px; /* Beri jarak dari elemen lain di sekitarnya */
 /* (Opsional) Pusatkan teks di dalamnya */

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Latihan Manipulasi DOM</title>
+        <!-- Latihan 2 : Lampu-ajaib -->
+        <style>
+            #lampu-ajaib {
+                width: 200px;
+                padding: 40px;
+                margin: 20px;
+                text-align: center;
+                font-size: 1.5em;
+                font-weight: bold;
+                border: 2px solid black;
+                border-radius: 10px;
+
+                /* Gaya awal saat mati */
+                background-color: #444;
+                color: white;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- Latihan 1 Papan Skor Pertandingan -->
+        <h1>Papan Skor Pertandingan</h1>
+        <p>Tim A: <span id="skor-tim-a">0</span></p>
+        <p>Tim B: <span id="skor-tim-b">0</span></p>
+        <!-- Tag <span> adalah tag inline yang sering digunakan untuk membungkus teks kecil agar bisa diberi -->
+        <!-- id atau class. -->
+
+        <!-- Latihan 2: Lampu Ajaib -->
+        <div id="lampu-ajaib">Lampu Mati</div> 
+
+        <!-- JavaScript -->
+         <script>
+            // Latihan 1 : Papan Skor
+            // Ambil elemen skor tim A berdasar ID
+            let skorTimA = document.querySelector("#skor-tim-a");
+            // Ambil elemen skor Tim B
+            let skorTimB = document.querySelector("#skor-tim-b");
+            // Ubah isi teks (inner HTML) skor Tim A dan Tim B
+            skorTimA.innerHTML = 15;
+            skorTimB.innerHTML = 10;
+
+            // Ubah gaya
+            let judul = document.querySelector("h1");
+            judul.style.color = "black";
+            judul.style.textAlign = "center";
+
+            // Latihan 2
+            // Pilih elemen #lampu-ajaib dan simpan dalam variabel.
+            let lampu = document.querySelector("#lampu-ajaib");
+
+            // Hidupkan lampu dengan mengubah CSS lewat JavaScript menggunakan .style:
+            lampu.style.backgroundColor = "yellow";
+            lampu.style.color = "black";
+            lampu.style.borderColor = "orange";
+
+            // Ubah teks dalam div menggunakan .innerHTML menjadi "Lampu Menyala!".
+            lampu.innerHTML = "Lampu Menyala!!!";
+         </script>
+    </body>    
+</html>
