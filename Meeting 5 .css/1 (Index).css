@@ -5,6 +5,15 @@
 }
 
 body {
+/* Default (Light Mode) */
+transition: all 0.3s ease; /* Transisi halus saat ganti mode */
+}
+.dark-mode {
+background-color: #222;
+color: #fafafa;
+}
+
+body {
     background-color: white;
     font-family: Verdana;
     margin: 20px;

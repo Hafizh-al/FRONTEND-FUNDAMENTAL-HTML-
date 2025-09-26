@@ -188,6 +188,7 @@
       <a href="https://twitter.com/username" target="_blank">
         <img src="https://svgcosmos.com/cdn/shop/files/Twitter-X-Logo-vector-svg-cricut_1024x.jpg?v=1693944025" alt="Twitter"></a>  
   </div>
+
   <br>
   <a href="https://www.google.com/maps/place/Daffa+snack/@-7.4705004,109.3120661,188m/data=!3m1!1e3!4m14!1m7!3m6!1s0x2e655b912358f9f7:0xd846183ceba78604!2sDaffa+snack!8m2!3d-7.4705436!4d109.3125279!16s%2Fg%2F11krl4zc4r!3m5!1s0x2e655b912358f9f7:0xd846183ceba78604!8m2!3d-7.4705436!4d109.3125279!16s%2Fg%2F11krl4zc4r?hl=id&entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank">
     <Address>Banyumas, Central Java, Indonesia</Address>
@@ -195,8 +196,22 @@
   <a href="https://www.google.com/maps/place/SMA+IT+HSI+IDN/@-6.9682463,106.7830035,709m/data=!3m2!1e3!4b1!4m6!3m5!1s0x2e683b000c4881ed:0x9ef5171ba317c4ad!8m2!3d-6.9682516!4d106.7855784!16s%2Fg%2F11vw_p98st?hl=id&entry=ttu&g_ep=EgoyMDI1MDkyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank">
     <Address>Sukabumi, West Java, Indonesia</Address>
   </a>  
+  <br>
 
-  <br/>
+<!-- MEETING 11 -->
+    <!-- Latihan 1: Tombol Dark/Light Mode -->
+  <button id="tombol-mode">Ubah mode</button>
+  <p>Ini adalah contoh teks Uji Coba JavaScript di halaman</p>
+  <script>
+    // Latihan 1: Dark/light Mode
+    let tombol = document.querySelector("#tombol-mode");  // pilih tombol
+    let body = document.querySelector("body");            //pilih body
+
+    tombol.addEventListener("click", function() {
+        body.classList.toggle("dark-mode");  // toggle dark-mode
+    });
+  </script> 
+
   <br/>
   <nav class="navbar">
     <a href="index.html" class="brand">My Website</a>
