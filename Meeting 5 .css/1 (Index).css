@@ -1,39 +1,50 @@
+@import url("https://fonts.googleapis/com/css2?family=PoppinsSdisplay=swap");
+
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-/* Default (Light Mode) */
-transition: all 0.3s ease; /* Transisi halus saat ganti mode */
+  /* Default (Light Mode) */
+  background: linear-gradient(to right, #f5f7fa, #c3cfe2); 
+  color: #222;
+  transition: all 0.3s ease; /* Transisi halus saat ganti mode */
 }
+
 .dark-mode {
-background-color: #222;
-color: #fafafa;
+  /* Dark Mode dengan gradient elegan */
+  background: linear-gradient(to right, #2c3e50, #34495e);
+  color: #fafafa;
 }
 
 body {
+  background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+  color: #222; /* warna default teks */
+  transition: all 0.3s ease;
+}
+
+body p {
+  color: #333; /* paragraf di light mode */
+  line-height: 1.6; /* biar lebih enak dibaca */
+}
+
+.dark-mode {
+  background: linear-gradient(to right, #2c3e50, #34495e);
+  color: #fafafa;
+}
+
+.dark-mode p {
+  color: #e0e0e0; /* abu terang, lebih soft dari putih biar enak di mata */
+}
+
+
+body {
     background-color: white;
-    font-family: Verdana;
+    font-family: "Poppins", sans-serif;
     margin: 20px;
     padding: 20px;  
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-}
-
-header {
-    background-color: rgba(255, 255, 255, 0.5);
-    color: #000000;
-    padding: 20px 25px 30px 25px;
-    border-radius: 11px;
-    z-index: 1000;
-    box-shadow: 0 7px 15px #000000;
-    backdrop-filter: blur(11px);
-    -webkit-backdrop-filter: blur(11px);
-    margin-bottom: 30px;
-    position: sticky;
-    top: 15px;
 }
 
 html {
@@ -41,45 +52,68 @@ html {
     scroll-padding-top: 175px; /* Sesuaikan dengan tinggi header */
 }
 
+header {
+    background: rgba(255, 255, 255, 0.5); /* lebih transparan */
+    color: #222;
+    padding: 20px;
+    border-radius: 11px;
+    z-index: 1000;
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.5); /* bayangan lebih lembut */
+    backdrop-filter: blur(11px);
+    -webkit-backdrop-filter: blur(11px);
+    margin: 0 19px 19px 19px;
+    position: sticky;
+    top: 0; /* biar nempel */
+}
+
+/* Dark Mode */
+.dark-mode header {
+    background: rgba(40, 44, 52, 0.5);
+    color: #f5f5f5;
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.4);
+}
+
 header h1 {
-    margin: 5px 0 13px 0;
-    font-size: 36px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 1px 0 1px 0;
+    font-size: 35px;
+    font-family: "Poppins", sans-serif;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    align-items: center;
-    justify-content: center;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    text-align: center;
 }
 
 nav ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 5px 0 5px 0;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 33px;
 }
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
+
 nav ul li a {
-    color: #000000;
+    color: inherit;
     text-decoration: none;
     font-weight: bold;
     font-size: 16px;
-    transition: color 0.3s;
     letter-spacing: 1px;
-}
-header p {
-    margin: 0;
-    color: #fff;
-    font-size: 18px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: color 0.3s, border-bottom 0.3s;
 }
 
+nav ul li a:hover {
+    color: #ff6f61; /* warna aksen hover */
+    border-bottom: 2px solid #ff6f61;
+}
 
+/* Responsive untuk mobile */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
 
 .kartu-profil img {
     max-width: 100%;
@@ -91,7 +125,7 @@ header p {
 
 p  {
     color: #2f4f4f;
-    font-family: Arial;
+    font-family: "Poppins", sans-serif;
     margin-bottom: 15px;
     font-size: 16px;
     margin: 0 auto 0px auto;
@@ -99,16 +133,29 @@ p  {
     
 }
 
+.kartu-profil p {
+    margin: 0px auto 0px auto;
+}
+
+.kartu-profil h2 {
+    margin-bottom: -1%;
+}
+
 h2 {
-    color: #191970;
+    color: #2c3e50;
     font-size: 24px;
     margin-top: 30px;
     margin-bottom: 15px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Poppins", sans-serif;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode */
+  .dark-mode h2 {
+  color: #f1f1f1;
 }
 
 .project-gallery {
@@ -131,6 +178,55 @@ h2 {
     gap: 39px;
     padding: 20px;
 }
+
+.card {
+  background: rgba(255, 255, 255, 0.07); /* efek kaca */
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.3);
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  margin: 10px 0 6px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #ff6f61; /* warna aksen */
+  letter-spacing: 1px;
+}
+
+.card p {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #f5f5f5;
+}
+
+/* Responsif padding lebih kecil di mobile */
+@media (max-width: 500px) {
+  .card {
+    padding: 12px;
+  }
+}
+
+
+
 
 .card {
   background: linear-gradient(to right, #232526, #414345);
@@ -204,26 +300,27 @@ grid-template-columns: repeat(3, 1fr); /* Ubah menjadi 3 kolom */
 }
 
 .kartu-profil {
-/* Lebar kartu */
-    /* width: 300px; */
-/* Beri warna latar dan bayangan agar terlihat seperti kartu */
-    background-color: white;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Properti untuk bayangan
-*/
-/* Atur Jarak & Bingkai */
-    padding: 20px;
-    border: 19px solid rgba(0, 0, 0, 0.7);
-    border-radius: 11px; /* Sudut melengkung */
-    margin: 50px; /* Beri jarak dari elemen lain di sekitarnya */
-/* (Opsional) Pusatkan teks di dalamnya */
-    text-align: center;
-    width: 50%;
-    justify-content: center;
-    align-items: center;
-    margin-left: 300px;
-    margin-right: 300px;
-    /* flex-wrap: wrap; */
+  width: 50%;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+
+  /* Efek kaca */
+  background: rgba(255, 255, 255, 0.15); /* transparan putih */
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(12px); /* blur kaca */
+  -webkit-backdrop-filter: blur(12px);
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
+
+/* Mode gelap */
+.dark-mode .kartu-profil {
+  background: rgba(40, 44, 52, 0.3); /* abu gelap transparan */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
 
 .p {
     font-size: 18px; /* Ukuran font lebih besar untuk teks di dalam kartu */
@@ -277,12 +374,10 @@ div.contact-container {
     margin: 0;
     box-sizing: border-box;
     font-family: 'Outfit';
-    background: linear-gradient(white, #cacaca, #cacaca, white);
-    border-radius: 11px;
 }
 
 .contact-container {
-    height: 89vh;
+    height: 83vh;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -376,26 +471,22 @@ div.contact-container {
     align-items: center;
     justify-content: center;
     border-radius: 11px;
-    margin: 0 10px;
+    margin: 0 17px 17px;
 }
 
-
-.card3 {
-    width: 250px;
-    height: 150px;
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* Default gambar */
+.social-links img {
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-.card-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    background-color: auto;
-    padding: 40px;
-    border-radius: 8px;
-} 
+body.dark-mode .social-links img {
+  filter: brightness(1.3) contrast(1.1) drop-shadow(0 0 6px rgba(255, 255, 255, 0.6));
+  transition: all 0.3s ease;
+}
+
+/* Saat hover */
+body.dark-mode .social-links img:hover {
+  filter: brightness(1.6) contrast(1.2) drop-shadow(0 0 12px rgba(255, 200, 150, 0.9));
+  transform: scale(1.08);
+}
