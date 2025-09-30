@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* scroll-margin-top: 25px;   tinggi header */
 }
 
 body {
@@ -18,6 +19,9 @@ header {
   background: #fff;
   padding: 15px 30px;
   border-bottom: 1px solid #ddd;
+  /* position: fixed;
+  /* max-width: fit-content; */
+  /* width: 100%; */
 }
 
 nav {
@@ -108,12 +112,15 @@ nav {
 }
 
 .feature-box {
-  background: #fff;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-  text-align: center;
+    background-color: var(--card-bg-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    text-align: left;
 }
+
+
+
 
 /* Footer */
 footer {
@@ -159,7 +166,7 @@ footer {
     padding-right: 20px;
   }
   .hero-img {
-    flex: 1;
+    flex: 0.7;
   }
   .features {
     grid-template-columns: repeat(3, 1fr);

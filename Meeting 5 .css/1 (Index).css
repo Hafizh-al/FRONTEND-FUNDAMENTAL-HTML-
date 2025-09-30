@@ -1,31 +1,32 @@
-@import url("https://fonts.googleapis/com/css2?family=PoppinsSdisplay=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 * {
     box-sizing: border-box;
+    scroll-margin-top: 45px;  /* tinggi header */
 }
 
 body {
-  /* Default (Light Mode) */
   background: linear-gradient(to right, #f5f7fa, #c3cfe2); 
   color: #222;
-  transition: all 0.3s ease; /* Transisi halus saat ganti mode */
+  font-family: "Poppins", sans-serif;
+  margin: 20px;
+  padding: 20px;  
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
 }
 
 .dark-mode {
-  /* Dark Mode dengan gradient elegan */
   background: linear-gradient(to right, #2c3e50, #34495e);
   color: #fafafa;
 }
 
-body {
-  background: linear-gradient(to right, #f5f7fa, #c3cfe2);
-  color: #222; /* warna default teks */
-  transition: all 0.3s ease;
-}
 
 body p {
   color: #333; /* paragraf di light mode */
-  line-height: 1.6; /* biar lebih enak dibaca */
+  line-height: 1.7; /* biar lebih enak dibaca */
+  margin: 3px 0; /* Jarak atas dan bawah */
+  font-size: 17px; /* Ukuran font lebih besar untuk teks di dalam kartu */
 }
 
 .dark-mode {
@@ -35,16 +36,6 @@ body p {
 
 .dark-mode p {
   color: #e0e0e0; /* abu terang, lebih soft dari putih biar enak di mata */
-}
-
-
-body {
-    background-color: white;
-    font-family: "Poppins", sans-serif;
-    margin: 20px;
-    padding: 20px;  
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
 }
 
 html {
@@ -81,6 +72,68 @@ header h1 {
     letter-spacing: 3px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
     text-align: center;
+}
+
+/* Navbar desktop tetap */
+.navbar ul {
+  display: flex;
+  gap: 20px;
+}
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Sidebar off-canvas */
+.sidebar {
+  height: 100%;
+  width: 0; /* awalnya tertutup */
+  position: fixed;
+  top: 0;
+  right: 0; /* muncul dari kanan */
+  background: rgba(255, 255, 255, 0.15); /* transparan */
+  backdrop-filter: blur(10px); /* efek kaca */
+  -webkit-backdrop-filter: blur(10px); /* untuk Safari */
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  z-index: 2000;
+}
+.sidebar a {
+  display: block;
+  padding: 15px 25px;
+  font-size: 18px;
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.sidebar a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 11px;
+  text-shadow: 0 0 8px #00f7ff, 0 0 16px #00f7ff; /* neon biru */
+  box-shadow: inset 0 0 8px rgba(0, 247, 255, 0.6),
+              0 0 12px rgba(0, 247, 255, 0.6); /* efek glow */
+}
+.sidebar .closebtn {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 36px;
+  color: white;
+}
+
+/* Responsive mode */
+@media (max-width: 900px) {
+  .navbar ul {
+    display: none; /* sembunyikan navbar horizontal */
+  }
+  .menu-toggle {
+    display: block; /* tampilkan tombol hamburger */
+  }
 }
 
 nav ul {
@@ -179,6 +232,26 @@ h2 {
     padding: 20px;
 }
 
+
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.3);
+}
+
+
+
+.card p {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* Responsif padding lebih kecil di mobile */
+@media (max-width: 500px) {
+  .card {
+    padding: 12px;
+  }
+}
+
 .card {
   background: rgba(255, 255, 255, 0.07); /* efek kaca */
   border-radius: 12px;
@@ -191,51 +264,6 @@ h2 {
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.card:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 12px 20px rgba(0,0,0,0.3);
-}
-
-.card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 12px;
-}
-
-.card h3 {
-  margin: 10px 0 6px;
-  font-size: 20px;
-  font-weight: 600;
-  color: #ff6f61; /* warna aksen */
-  letter-spacing: 1px;
-}
-
-.card p {
-  font-size: 15px;
-  line-height: 1.5;
-  color: #f5f5f5;
-}
-
-/* Responsif padding lebih kecil di mobile */
-@media (max-width: 500px) {
-  .card {
-    padding: 12px;
-  }
-}
-
-
-
-
-.card {
-  background: linear-gradient(to right, #232526, #414345);
-  border-radius: 11px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  padding: 19px;
-  text-align: center;
-  transition: transform 0.3s ease;
-}
 /* Pertemuan 9 */
 /* Tablet Styles: Terapkan 2 kolom jika lebar layar minimal 600px */
 @media (min-width: 600px) {
@@ -285,18 +313,14 @@ grid-template-columns: repeat(3, 1fr); /* Ubah menjadi 3 kolom */
   height: 255px;
   object-fit: cover; /* gambar ngepas kotak */
   border-radius: 11px;
-  margin-bottom: 10px;
+  margin-bottom: 11px;
 }
 
 .card h3 {
   margin: 10px 0 5px;
-  font-size: 18px;
-  color: white;
-}
-
-.card p {
-  font-size: 14px;
-  color: white;
+  font-size: 19px;
+  letter-spacing: 1px;
+  font-weight: 555;
 }
 
 .kartu-profil {
@@ -322,12 +346,6 @@ grid-template-columns: repeat(3, 1fr); /* Ubah menjadi 3 kolom */
 }
 
 
-.p {
-    font-size: 18px; /* Ukuran font lebih besar untuk teks di dalam kartu */
-    color: #333; /* Warna teks */
-    line-height: 1.6; /* Jarak antar baris */
-    margin: 10px 0; /* Jarak atas dan bawah */
-}
 
 /* Pertemuan 7 */
 
@@ -451,7 +469,7 @@ div.contact-container {
     height: 445px;
     border-radius: 11px;
     margin-top: 1px;
-    mix-blend-mode: multiply; 
+    mix-blend-mode: multiply; /* atau screen, darken, lighten */
 }
 
 @media (max-width: 800px) {

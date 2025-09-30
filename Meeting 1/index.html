@@ -10,7 +10,7 @@
 <body>
   <header>
     <h1 id="beranda"><b>MUHAMMAD DAFFA AL HAFIZH</b></h1>
-    <nav>
+    <nav class="navbarr">
       <ul>
         <li><a href="#beranda">Beranda</a></li>
         <li><a href="#about-me">About Me</a></li>
@@ -20,7 +20,35 @@
         <li><a href="#contact-us">Contact Us</a></li>
       </ul>
     </nav>
+
+    <!-- Tombol menu -->
+    <div class="menu-toggle" id="menu-toggle">☰</div> 
   </header>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <a href="javascript:void(0)" class="closebtn" id="closebtn">&times;</a>
+    <a href="#beranda">Beranda</a>
+    <a href="#about-me">About Me</a>
+    <a href="#my-hobby">My Hobby</a>
+    <a href="#project">My Project</a>
+    <a href="#certificate">My Certificate</a>
+    <a href="#contact-us">Contact Us</a>
+  </div>
+
+<!-- JavaScript -->
+  <script>
+    const sidebar = document.getElementById("sidebar");
+    const menuToggle = document.getElementById("menu-toggle");
+    const closeBtn = document.getElementById("closebtn");
+
+    menuToggle.onclick = function () {
+      sidebar.style.width = "250px"; // buka
+    }
+    closeBtn.onclick = function () {
+      sidebar.style.width = "0"; // tutup
+    }
+  </script>
   <h2 id="about-me">About Me</h2>
   
   <p>Saya bernama Muhammad Daffa Al Hafizh.</p>

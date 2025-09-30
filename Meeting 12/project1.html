@@ -21,7 +21,7 @@
                 <li><a href="#features">Fitur</a></li>
                 <li><a href="#footer">Kontak</a></li>
             </ul>
-            <button id="tombol-mode">🌙</button>
+            <button id="tombol-mode"><i>darkmode</i></button>
         </nav>
      </header>
     <!-- Hero Section -->
@@ -65,7 +65,7 @@
      
          tombol.addEventListener("click", () => {
              body.classList.toggle("dark-mode");
-             tombol.textContent = body.classList.contains("dark-mode") ? "☀️" : "🌙";
+             tombol.textContent = body.classList.contains("dark-mode") ? "lightmode" : "darkmode";
          });
      </script> 
 </body>
