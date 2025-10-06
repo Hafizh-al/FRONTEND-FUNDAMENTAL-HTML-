@@ -3,6 +3,8 @@
 * {
     box-sizing: border-box;
     scroll-margin-top: 45px;  /* tinggi header */
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -14,6 +16,7 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: all 0.3s ease;
+  padding-top: 11px; /* sesuaikan dengan tinggi header */
 }
 
 .dark-mode {
@@ -43,6 +46,47 @@ html {
     scroll-padding-top: 175px; /* Sesuaikan dengan tinggi header */
 }
 
+/* Saat layar kecil (tablet / HP) */
+@media (max-width: 768px) {
+header {
+  width: 100%;
+  max-width: 100%;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.15); /* efek kaca */
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  text-align: center;
+  box-sizing: border-box;
+  max-height: 120px;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+header h1 {
+  font-size: clamp(19px, 5vw, 47px); /* responsif: min 20px, max 40px */
+  margin: 0;
+  word-wrap: break-word; /* biar nggak keluar kotak */
+  line-height: 1.2;
+}
+
+  .sidebar {
+    width: 200px;         /* sidebar lebih ramping */
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;  /* munculin tombol menu */
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+}
+
 header {
     background: rgba(255, 255, 255, 0.5); /* lebih transparan */
     color: #222;
@@ -52,7 +96,6 @@ header {
     box-shadow: 0 7px 15px rgba(0, 0, 0, 0.5); /* bayangan lebih lembut */
     backdrop-filter: blur(11px);
     -webkit-backdrop-filter: blur(11px);
-    margin: 0 19px 19px 19px;
     position: sticky;
     top: 0; /* biar nempel */
 }
@@ -74,11 +117,20 @@ header h1 {
     text-align: center;
 }
 
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
 /* Navbar desktop tetap */
 .navbar ul {
   display: flex;
+  list-style: none;
   gap: 20px;
+  margin: 0;
+  padding: 0;
 }
+
 .menu-toggle {
   display: none;
   font-size: 24px;
@@ -93,7 +145,7 @@ header h1 {
   top: 0;
   right: 0; /* muncul dari kanan */
   background: rgba(255, 255, 255, 0.15); /* transparan */
-  backdrop-filter: blur(10px); /* efek kaca */
+  backdrop-filter: blur(11px); /* efek kaca */
   -webkit-backdrop-filter: blur(10px); /* untuk Safari */
   border-left: 1px solid rgba(255, 255, 255, 0.3);
 
@@ -106,7 +158,7 @@ header h1 {
   display: block;
   padding: 15px 25px;
   font-size: 18px;
-  color: white;
+  color: black;
   font-weight: 500;
   text-decoration: none;
   transition: 0.3s;
@@ -146,7 +198,7 @@ nav ul {
 }
 
 nav ul li a {
-    color: inherit;
+    color: #2c3e50;
     text-decoration: none;
     font-weight: bold;
     font-size: 16px;
@@ -182,7 +234,7 @@ p  {
     margin-bottom: 15px;
     font-size: 16px;
     margin: 0 auto 0px auto;
-    padding: 10px;
+    padding: 3px;
     
 }
 
@@ -212,6 +264,13 @@ h2 {
 }
 
 .project-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 39px;
+    padding: 20px;
+}
+
+.projectE-gallery {
     display: grid;
     grid-template-columns: 1fr;
     gap: 39px;
@@ -254,7 +313,7 @@ h2 {
 
 .card {
   background: rgba(255, 255, 255, 0.07); /* efek kaca */
-  border-radius: 12px;
+  border-radius: 11px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
   padding: 20px;
   text-align: center;
@@ -264,6 +323,17 @@ h2 {
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
+.cardE {
+  background: rgba(255, 255, 255, 0.07); /* efek kaca */
+  border-radius: 11px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  padding: 17px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
 /* Pertemuan 9 */
 /* Tablet Styles: Terapkan 2 kolom jika lebar layar minimal 600px */
 @media (min-width: 600px) {
@@ -275,6 +345,19 @@ grid-template-columns: repeat(2, 1fr); /* Ubah menjadi 2 kolom */
 @media (min-width: 900px) {
 .project-gallery {
 grid-template-columns: repeat(3, 1fr); /* Ubah menjadi 3 kolom */
+}
+}
+
+/* Tablet Styles: Terapkan 2 kolom jika lebar layar minimal 600px */
+@media (min-width: 600px) {
+.projectE-gallery {
+grid-template-columns: repeat(2, 1fr); /* Ubah menjadi 2 kolom */
+}
+}
+/* Desktop Styles: Terapkan 3 kolom jika lebar layar minimal 900px */
+@media (min-width: 900px) {
+.projectE-gallery {
+grid-template-columns: repeat(4, 1fr); /* Ubah menjadi 3 kolom */
 }
 }
 
@@ -308,6 +391,10 @@ grid-template-columns: repeat(3, 1fr); /* Ubah menjadi 3 kolom */
   transform: translateY(-5px); /* animasi hover */
 }
 
+.cardE:hover {
+  transform: translateY(-5px); /* animasi hover */
+}
+
 .card img {
   width: 100%;
   height: 255px;
@@ -316,7 +403,22 @@ grid-template-columns: repeat(3, 1fr); /* Ubah menjadi 3 kolom */
   margin-bottom: 11px;
 }
 
+.cardE img {
+  width: 100%;
+  height: 175px;
+  object-fit: cover; /* gambar ngepas kotak */
+  border-radius: 11px;
+  margin-bottom: 9px;
+}
+
 .card h3 {
+  margin: 10px 0 5px;
+  font-size: 19px;
+  letter-spacing: 1px;
+  font-weight: 555;
+}
+
+.cardE h3 {
   margin: 10px 0 5px;
   font-size: 19px;
   letter-spacing: 1px;
@@ -356,7 +458,8 @@ grid-template-columns: repeat(3, 1fr); /* Ubah menjadi 3 kolom */
     align-items: center; /* Memusatkan item */
     gap: 15px;
     background-color: #333;
-    padding: 15px 30px;
+    padding: 13px 25px;
+    color: white;
     border-radius: 11px;
     box-shadow: 0 2px 4px rgba(0, 0,
     0, 0.1);
@@ -373,8 +476,9 @@ justify-content: space-between; /* Mendorong item ke ujung */
 }
 
 .nav-links {
-    display: flex;
-    gap: 25px;
+  list-style: none;
+  display: flex;
+  gap: 23px;
 }
 
 .navbar a {
@@ -382,9 +486,21 @@ justify-content: space-between; /* Mendorong item ke ujung */
     text-decoration: none;
 }
 
-.brand {
-    font-size: 1.5em; /*em adalah satuan relatif yang mengacu pada ukuran font elemen induk*/
+.navbar .brand {
+    font-size: 20px;
     font-weight: bold;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  background: #444;
 }
 
 div.contact-container {
@@ -507,4 +623,63 @@ body.dark-mode .social-links img {
 body.dark-mode .social-links img:hover {
   filter: brightness(1.6) contrast(1.2) drop-shadow(0 0 12px rgba(255, 200, 150, 0.9));
   transform: scale(1.08);
+}
+
+address a {
+  text-decoration: none;
+  font-style: normal; /* supaya nggak italic */
+  color: #1e90ff; /* light mode default */
+  transition: 0.3s ease;
+}
+
+address a:hover {
+  color: #ff9800;
+  text-decoration: underline;
+}
+
+/* Dark mode */
+body.dark-mode address a {
+  color: #4dabf7; /* biru lembut */
+}
+
+body.dark-mode address a:hover {
+  color: #ffd54f; /* kuning buat kontras */
+}
+
+footer {
+  background: #333;
+  color: #aaa;
+  text-align: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 11px;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 0;
+}
+
+.footer-links a {
+  color: #aaa;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-links {
+  /* margin: 7px; */
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+.pe {
+  color: #aaa;
 }
