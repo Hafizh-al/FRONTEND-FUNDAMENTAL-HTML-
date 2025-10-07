@@ -197,6 +197,10 @@ nav ul {
     gap: 33px;
 }
 
+.dark-mode nav ul li a {
+    color: #f1f1f1;
+}
+
 nav ul li a {
     color: #2c3e50;
     text-decoration: none;
@@ -507,7 +511,7 @@ div.contact-container {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Outfit';
+    font-family: "Poppins", sans-serif;
 }
 
 .contact-container {

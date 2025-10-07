@@ -109,6 +109,7 @@ nav {
   grid-template-columns: 1fr;
   gap: 20px;
   padding: 40px 50px;
+
 }
 
 .feature-box {
@@ -118,9 +119,6 @@ nav {
     box-shadow: var(--shadow);
     text-align: left;
 }
-
-
-
 
 /* Footer */
 footer {
